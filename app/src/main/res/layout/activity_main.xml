@@ -4,44 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Fixed ImageView -->
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/editor_bg" />
+
+    <!-- ScrollView for content -->
     <ScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-           <ImageView
-               android:id="@+id/img"
-               android:layout_width="match_parent"
-               android:src="@drawable/editor_bg"
-               android:scaleType="centerCrop"
-               android:layout_height="150dp"/>
-
             <!-- Dummy content for scrolling -->
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="1000dp"
-                    android:text="Scrollable Content"
-                    android:gravity="center" />
-
-            </LinearLayout>
+                android:layout_height="1000dp"
+                android:gravity="center"
+                android:text="Scrollable Content" />
         </LinearLayout>
     </ScrollView>
 
+    <!-- Overlay view -->
     <View
         android:id="@+id/overlayView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#80FF0000"
-        android:alpha="0.5" />
+        android:alpha="0.5"
+        android:visibility="invisible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
