@@ -1,5 +1,6 @@
 package com.chandan.testapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +17,10 @@ import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 
+import com.chandan.testapplication.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
     private View overlayView;
     private ScrollView nestedScrollView;
     private ImageView image;
@@ -24,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
         nestedScrollView = findViewById(R.id.nestedScrollView);
@@ -35,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
         image.setVisibility(View.VISIBLE);      // PNG always visible
 
         setupScrollBehavior();
+
+        binding.btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ActivityImagePalette.class));
+            }
+        });
 
     }
 

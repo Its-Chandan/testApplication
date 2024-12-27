@@ -1,0 +1,41 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- ImageView for displaying the loaded image -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Buttons for the given URLs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/urlButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open URL 1"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/urlButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open URL 2"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+</RelativeLayout>
