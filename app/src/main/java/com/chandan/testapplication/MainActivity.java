@@ -19,6 +19,7 @@ import android.graphics.drawable.shapes.RectShape;
 
 import com.chandan.testapplication.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private View overlayView;
